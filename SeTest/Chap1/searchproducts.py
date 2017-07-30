@@ -1,9 +1,16 @@
+import os
 from selenium import webdriver
 
+# get the path of chromedriver
+dir = os.path.dirname(__file__)
+chrome_driver_path = dir + '\chromedriver.exe'
+
 # create a new Firefox session
-driver = webdriver.Chrome("../chromedriver.exe")
+driver = webdriver.Chrome(chrome_driver_path)
 driver.implicitly_wait(30)
 driver.maximize_window()
+
+
 # navigate to the application home page
 driver.get("http://demo.magentocommerce.com/")
 
