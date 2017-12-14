@@ -49,7 +49,31 @@ namespace SpecflowIntro.StepDefinations
             Console.WriteLine(name);
             Console.WriteLine(age);
             Console.WriteLine(phone);
-        }
+            ScenarioContext.Current["InfoForNextStep"] = "Step 1 pass";
 
+            List<EmployeeDetails> list = new List<EmployeeDetails>
+            {
+                new EmployeeDetails()
+                {
+                    Name = "tony",
+                    Age = "23",
+                    Email ="123123",
+                     Phone="123"
+                }
+            };
+
+            //save the value in ScenarioContext
+            ScenarioContext.Current.Add("empDetails", list);
+
+            var details = ScenarioContext.Current.Get<IEnumerable<EmployeeDetails>>("empDetails");
+
+            foreach (var detail in details)
+            {
+                Console.WriteLine(detail.Name);
+                Console.WriteLine(detail.Email);
+                Console.WriteLine(detail.Phone);
+                Console.WriteLine(detail.Age);
+            }
+        }
     }
 }
