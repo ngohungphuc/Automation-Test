@@ -8,24 +8,25 @@ using TechTalk.SpecFlow;
 namespace SpecflowIntro.StepDefinations
 {
     [Binding]
-    public class SampleFeatureStep
+    class SampleFeatureSteps
     {
         [Given(@"I have entered (.*) into the calculator")]
-        public void GivenIHaveEnteredIntoTheCalculator(int p0)
+        public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
-            ScenarioContext.Current.Pending();
+           Console.WriteLine(numbers);
         }
 
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("Press Add button");
         }
 
         [Then(@"the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBeOnTheScreen(int p0)
+        public void ThenTheResultShouldBeOnTheScreen(int result)
         {
-            ScenarioContext.Current.Pending();
+           if(result == 120)
+               Console.WriteLine("Pass");
         }
     }
 }
