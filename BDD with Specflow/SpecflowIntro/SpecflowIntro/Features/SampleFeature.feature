@@ -20,3 +20,15 @@ Scenario: Create new employee with mandatory details
 	 | tony21 | 23  | 0123  | ngohungphuc@mail.com |
 	#And I click add
 	#Then I should see employee details saved in my app and DB
+
+Scenario Outline: Create new employee with mandatory details for different iteration
+	#Given I have opened my application
+	#Then I should see employee details
+	When I fill all the mandatory details in form <Name>, <Age> and <Phone>
+	#And I click add
+	#Then I should see employee details saved in my app and DB
+Examples: 
+	 | Name | Age | Phone | 
+	 | tony | 23  | 0123  |
+	 | tony1 | 23  | 0123  | 
+	 | tony21 | 23  | 0123  |
