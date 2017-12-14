@@ -33,7 +33,8 @@ namespace SpecflowIntro.StepDefinations
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
-            var details = table.CreateSet<EmployeeDetails>();
+            //var details = table.CreateSet<EmployeeDetails>();
+            var details = table.CreateDynamicSet();
             foreach (var detail in details)
             {
                 Console.WriteLine(detail.Name);
