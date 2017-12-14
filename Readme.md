@@ -1,4 +1,5 @@
-![Specflow](images/SpecFlow-Automation-Testing.jpg)
+<img src="images/SpecFlow-Automation-Testing.jpg" alt="SpecFlow-Automation-Testing" style="width: 100%;"/>
 
-![PythonSelenium](images/seleniumpy.jpg)
+<img src="images/seleniumpy.jpg" alt="PythonSelenium" style="width: 100%;"/>
+
 
