@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="StepDefinations\EmployeeDetails.cs" />
     <Compile Include="StepDefinations\SampleFeatureSteps.cs" />
+    <Compile Include="TestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
