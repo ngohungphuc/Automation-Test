@@ -32,3 +32,10 @@ Examples:
 	 | tony | 23  | 0123  |
 	 | tony1 | 23  | 0123  | 
 	 | tony21 | 23  | 0123  |
+
+
+Scenario: Check if I could get to the details entered via table from Extended Step
+	When I fill all the mandatory details in form
+	 | Name | Age | Phone | Email       |
+	 | tony | 23  | 0123  | ngohungphuc@mail.com |
+	 Then I should get the same value from Extended steps

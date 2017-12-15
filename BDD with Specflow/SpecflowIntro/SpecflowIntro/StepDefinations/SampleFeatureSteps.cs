@@ -11,6 +11,13 @@ namespace SpecflowIntro.StepDefinations
     [Binding]
     class SampleFeatureSteps
     {
+        public readonly EmployeeDetails _employee;
+
+        public SampleFeatureSteps(EmployeeDetails employee)
+        {
+            _employee = employee;
+        }
+
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
@@ -33,14 +40,23 @@ namespace SpecflowIntro.StepDefinations
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
-            //var details = table.CreateSet<EmployeeDetails>();
-            var details = table.CreateDynamicSet();
-            foreach (var detail in details)
+            ////var details = table.CreateSet<EmployeeDetails>();
+            //var details = table.CreateDynamicSet();
+            //foreach (var detail in details)
+            //{
+            //    Console.WriteLine(detail.Name);
+            //    Console.WriteLine(detail.Email);
+            //    Console.WriteLine(detail.Phone);
+            //    Console.WriteLine(detail.Age);
+            //}
+
+            var data = table.CreateDynamicSet();
+            foreach (var item in data)
             {
-                Console.WriteLine(detail.Name);
-                Console.WriteLine(detail.Email);
-                Console.WriteLine(detail.Phone);
-                Console.WriteLine(detail.Age);
+                _employee.Name = item.Name;
+                _employee.Email = item.Email;
+                _employee.Phone = item.Phone;
+                _employee.Age = item.Age;
             }
         }
 
